@@ -13,7 +13,7 @@ The generated code is modified for our needs as follows:
 
 ## ckeditor.js
 
-   To allow Webdriver testing and other javascript functions access
+ 1. To allow Webdriver testing and other javascript functions access
    to CKEditor controls, the source javascript has this added line of
    code to give ID attributes to CKEditor iframes:
 
@@ -22,3 +22,8 @@ The generated code is modified for our needs as follows:
 
    add the following:
       g.setAttribute("id","ckeditor_"+a.name+"_frame");
+
+ 2. Removed a section of code calling 
+   https://cke4.ckeditor.com/ckeditor4-secure-version/versions.json
+   because calls to outside sites are restricted in some areas
+   where our software is used
